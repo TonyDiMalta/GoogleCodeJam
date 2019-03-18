@@ -80,11 +80,16 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Full</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,6 +127,7 @@
     <ClInclude Include="Sources\2013\QualificationRound\Qualification-Round.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\2013\QualificationRound\Fair-and-Square.cpp" />
     <ClCompile Include="Sources\2013\QualificationRound\Tic-Tac-Toe-Tomek.cpp" />
     <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>

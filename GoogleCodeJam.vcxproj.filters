@@ -26,5 +26,8 @@
     <ClCompile Include="Sources\main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\2013\QualificationRound\Fair-and-Square.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
