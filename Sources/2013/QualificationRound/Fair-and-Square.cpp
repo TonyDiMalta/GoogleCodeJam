@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "Qualification-Round.hpp"
+#include "Qualification-Round-2013.hpp"
 
 // We want all fair and square numbers with digits <= 101, so we get the square
 // roots bounded by length <= 2 * 25 + 1 = 51
