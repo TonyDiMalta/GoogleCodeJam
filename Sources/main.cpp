@@ -11,6 +11,7 @@ const std::map<std::string, std::pair<std::string, std::map<std::string, std::st
         { "Qualification Round 2013",
             {
                 { "T4", "Tic-Tac-Toe-Tomek" },
+                { "Lm", "Lawnmower" },
                 { "FS", "Fair and Square" }
             }
         }
@@ -84,6 +85,10 @@ void Function_To_Call(const std::string& my_namespace, const std::string& my_fun
         if (my_function == "T4")
         {
             QR_2013::Solve_T4(file_input, file_output);
+        }
+        else if (my_function == "Lm")
+        {
+            QR_2013::Solve_Lm(file_input, file_output);
         }
         else if (my_function == "FS")
         {

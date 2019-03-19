@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\2013\QualificationRound\Fair-and-Square.cpp" />
+    <ClCompile Include="Sources\2013\QualificationRound\Lawnmower.cpp" />
     <ClCompile Include="Sources\2013\QualificationRound\Tic-Tac-Toe-Tomek.cpp" />
     <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>
