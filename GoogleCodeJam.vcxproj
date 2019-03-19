@@ -124,12 +124,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Sources\2013\QualificationRound\Qualification-Round.hpp" />
+    <ClInclude Include="Sources\2013\QualificationRound\Qualification-Round-2013.hpp" />
+    <ClInclude Include="Sources\2014\QualificationRound\Qualification-Round-2014.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\2013\QualificationRound\Fair-and-Square.cpp" />
     <ClCompile Include="Sources\2013\QualificationRound\Lawnmower.cpp" />
     <ClCompile Include="Sources\2013\QualificationRound\Tic-Tac-Toe-Tomek.cpp" />
+    <ClCompile Include="Sources\2014\QualificationRound\Magic-Trick.cpp" />
     <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

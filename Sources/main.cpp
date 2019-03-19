@@ -4,6 +4,7 @@
 #include <string>
 
 #include "2013/QualificationRound/Qualification-Round-2013.hpp"
+#include "2014/QualificationRound/Qualification-Round-2014.hpp"
 
 const std::map<std::string, std::pair<std::string, std::map<std::string, std::string>>> list_valid_entries
 {
@@ -13,6 +14,13 @@ const std::map<std::string, std::pair<std::string, std::map<std::string, std::st
                 { "T4", "Tic-Tac-Toe-Tomek" },
                 { "Lm", "Lawnmower" },
                 { "FS", "Fair and Square" }
+            }
+        }
+    },
+    { "QR_2014",
+        { "Qualification Round 2014",
+            {
+                { "MT", "Magic-Trick" }
             }
         }
     }
@@ -73,6 +81,10 @@ std::string Get_Directory(const std::string& my_namespace)
     {
         return QR_2013::directory_path;
     }
+    else if (my_namespace == "QR_2014")
+    {
+        return QR_2014::directory_path;
+    }
 
     std::cerr << "No namespace \"" << my_namespace << "\" found.\n";
     return std::string();
@@ -97,6 +109,13 @@ void Function_To_Call(const std::string& my_namespace, const std::string& my_fun
         else
         {
             std::cerr << "No function \"" << my_function << "\" to call.\n";
+        }
+    }
+    else if (my_namespace == "QR_2014")
+    {
+        if (my_function == "MT")
+        {
+            QR_2014::Solve_MT(file_input, file_output);
         }
     }
     else
