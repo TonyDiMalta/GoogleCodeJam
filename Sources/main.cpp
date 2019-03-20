@@ -21,7 +21,8 @@ const std::map<std::string, std::pair<std::string, std::map<std::string, std::st
         { "Qualification Round 2014",
             {
                 { "MT", "Magic Trick" },
-                { "CA", "Cookie Clicker Alpha" }
+                { "CA", "Cookie Clicker Alpha" },
+                { "DW", "Deceitful War" }
             }
         }
     }
@@ -121,6 +122,10 @@ void Function_To_Call(const std::string& my_namespace, const std::string& my_fun
         else if (my_function == "CA")
         {
             QR_2014::Solve_CA(file_input, file_output);
+        }
+        else if (my_function == "DW")
+        {
+            QR_2014::Solve_DW(file_input, file_output);
         }
     }
     else
