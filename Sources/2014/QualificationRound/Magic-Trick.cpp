@@ -53,7 +53,7 @@ void QR_2014::Solve_MT(std::ifstream& file_input, std::ofstream& file_output)
                 {
                     file_input >> throw_value;
 
-                    nb_matching_cards += std::count(chosen_cards, chosen_cards + CARDS_PER_ROW, throw_value);
+                    nb_matching_cards += static_cast<unsigned int>(std::count(chosen_cards, chosen_cards + CARDS_PER_ROW, throw_value));
 
                     if (nb_matching_cards == 1 &&
                         magician_reveal.empty())
