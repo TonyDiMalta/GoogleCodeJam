@@ -6,6 +6,7 @@
 
 #include "2013/QualificationRound/Qualification-Round-2013.hpp"
 #include "2014/QualificationRound/Qualification-Round-2014.hpp"
+#include "2015/QualificationRound/Qualification-Round-2015.hpp"
 
 typedef void(*function_pointer)(std::ifstream&, std::ofstream&);
 
@@ -37,6 +38,15 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
                 },
                 { "DW",
                     { "Deceitful War", QR_2014::Solve_DW }
+                }
+            }
+        }
+    },
+    { "QR_2015",
+        { "Qualification Round 2015", QR_2015::directory_path,
+            {
+                { "SO",
+                    { "Standing Ovation", QR_2015::Solve_SO }
                 }
             }
         }

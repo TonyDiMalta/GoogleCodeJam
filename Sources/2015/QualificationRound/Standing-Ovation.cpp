@@ -1,0 +1,45 @@
+#include <fstream>
+#include <string>
+
+#include "Qualification-Round-2015.hpp"
+
+unsigned int Minimum_Number_Of_Friends(const unsigned int& max_shyness_level, const std::string& audience_shyness_level)
+{
+    unsigned int min_nb_friends = 0;
+    unsigned int nb_people_standing = 0;
+    unsigned int shyness_level;
+
+    for (shyness_level = 0; shyness_level <= max_shyness_level; ++shyness_level)
+    {
+        if (nb_people_standing < shyness_level)
+        {
+            min_nb_friends += shyness_level - nb_people_standing;
+            nb_people_standing = shyness_level;
+        }
+
+        nb_people_standing += audience_shyness_level[shyness_level] - '0';
+    }
+
+    return min_nb_friends;
+}
+
+void QR_2015::Solve_SO(std::ifstream& file_input, std::ofstream& file_output)
+{
+    unsigned int nb_audiences;
+    unsigned int audience_index;
+    unsigned int max_shyness_level;
+    unsigned int min_nb_friends;
+    std::string audience_shyness_level;
+
+    file_input >> nb_audiences;
+    for (audience_index = 1; audience_index <= nb_audiences; ++audience_index)
+    {
+        file_output << "Case #" << audience_index << ": ";
+
+        file_input >> max_shyness_level >> audience_shyness_level;
+
+        min_nb_friends = Minimum_Number_Of_Friends(max_shyness_level, audience_shyness_level);
+
+        file_output << min_nb_friends << '\n';
+    }
+}

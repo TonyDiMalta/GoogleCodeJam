@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClInclude Include="Sources\2013\QualificationRound\Qualification-Round-2013.hpp" />
     <ClInclude Include="Sources\2014\QualificationRound\Qualification-Round-2014.hpp" />
+    <ClInclude Include="Sources\2015\QualificationRound\Qualification-Round-2015.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\2013\QualificationRound\Fair-and-Square.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Sources\2014\QualificationRound\Cookie-Clicker-Alpha.cpp" />
     <ClCompile Include="Sources\2014\QualificationRound\Deceitful-War.cpp" />
     <ClCompile Include="Sources\2014\QualificationRound\Magic-Trick.cpp" />
+    <ClCompile Include="Sources\2015\QualificationRound\Standing-Ovation.cpp" />
     <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
