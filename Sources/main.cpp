@@ -20,7 +20,8 @@ const std::map<std::string, std::pair<std::string, std::map<std::string, std::st
     { "QR_2014",
         { "Qualification Round 2014",
             {
-                { "MT", "Magic-Trick" }
+                { "MT", "Magic Trick" },
+                { "CA", "Cookie Clicker Alpha" }
             }
         }
     }
@@ -116,6 +117,10 @@ void Function_To_Call(const std::string& my_namespace, const std::string& my_fun
         if (my_function == "MT")
         {
             QR_2014::Solve_MT(file_input, file_output);
+        }
+        else if (my_function == "CA")
+        {
+            QR_2014::Solve_CA(file_input, file_output);
         }
     }
     else

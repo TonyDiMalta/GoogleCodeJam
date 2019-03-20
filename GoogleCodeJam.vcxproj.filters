@@ -30,6 +30,9 @@
     <ClCompile Include="Sources\2014\QualificationRound\Magic-Trick.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\2014\QualificationRound\Cookie-Clicker-Alpha.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\2013\QualificationRound\Qualification-Round-2013.hpp">
