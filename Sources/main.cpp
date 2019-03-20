@@ -2,136 +2,130 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <tuple>
 
 #include "2013/QualificationRound/Qualification-Round-2013.hpp"
 #include "2014/QualificationRound/Qualification-Round-2014.hpp"
 
-const std::map<std::string, std::pair<std::string, std::map<std::string, std::string>>> list_valid_entries
+typedef void(*function_pointer)(std::ifstream&, std::ofstream&);
+
+const std::map<std::string, std::tuple<std::string, std::string, std::map<std::string, std::pair<std::string, function_pointer>>>> list_valid_entries
 {
     { "QR_2013",
-        { "Qualification Round 2013",
+        { "Qualification Round 2013", QR_2013::directory_path,
             {
-                { "T4", "Tic-Tac-Toe-Tomek" },
-                { "Lm", "Lawnmower" },
-                { "FS", "Fair and Square" }
+                { "T4",
+                    { "Tic-Tac-Toe-Tomek", QR_2013::Solve_T4 }
+                },
+                { "Lm",
+                    { "Lawnmower", QR_2013::Solve_Lm }
+                },
+                { "FS",
+                    { "Fair and Square", QR_2013::Solve_FS }
+                }
             }
         }
     },
     { "QR_2014",
-        { "Qualification Round 2014",
+        { "Qualification Round 2014", QR_2014::directory_path,
             {
-                { "MT", "Magic Trick" },
-                { "CA", "Cookie Clicker Alpha" },
-                { "DW", "Deceitful War" }
+                { "MT",
+                    { "Magic Trick", QR_2014::Solve_MT }
+                },
+                { "CA",
+                    { "Cookie Clicker Alpha", QR_2014::Solve_CA }
+                },
+                { "DW",
+                    { "Deceitful War", QR_2014::Solve_DW }
+                }
             }
         }
     }
 };
 
-bool Is_Valid_Entry(const std::string& chosen_entry, const std::string& chosen_problem = "")
+bool Is_Valid_Entry(const std::string& chosen_entry, bool should_display_error = true)
 {
     const auto& entry_it = list_valid_entries.find(chosen_entry);
 
     if (entry_it == list_valid_entries.end())
     {
-        return false;
-    }
-
-    if (chosen_problem.empty())
-    {
-        return true;
-    }
-
-    const auto& entry_values = list_valid_entries.at(chosen_entry).second;
-    
-    if (entry_values.find(chosen_problem) == entry_values.end())
-    {
+        if (should_display_error)
+        {
+            std::cerr << "No entry \"" << chosen_entry << "\" found.\n";
+        }
         return false;
     }
 
     return true;
 }
 
-void Display_Valid_Entries(const std::string& chosen_entry = "")
+bool Is_Valid_Problem(const std::string& chosen_entry, const std::string& chosen_problem, bool should_display_error = true)
 {
-    if (chosen_entry.empty())
+    if (!Is_Valid_Entry(chosen_entry, should_display_error))
     {
-        for (const auto& entry : list_valid_entries)
-        {
-            std::cout << '[' << entry.first << "] " << entry.second.first << '\n';
-        }
+        return false;
     }
-    else
+
+    const auto& problem_values = std::get<2>(list_valid_entries.at(chosen_entry));
+    const auto& problem_it = problem_values.find(chosen_problem);
+
+    if (problem_it == problem_values.end())
     {
-        for (const auto& entry : list_valid_entries)
+        if (should_display_error)
         {
-            if (chosen_entry == entry.first)
-            {
-                const auto& to_parse = entry.second.second;
-                for (const auto& values : to_parse)
-                {
-                    std::cout << '[' << values.first << "] " << values.second << '\n';
-                }
-            }
+            std::cerr << "No problem \"" << chosen_problem << "\" found.\n";
         }
+        return false;
+    }
+
+    return true;
+}
+
+void Display_Valid_Entries()
+{
+    for (const auto& entry : list_valid_entries)
+    {
+        std::cout << '[' << entry.first << "] " << std::get<0>(entry.second) << '\n';
+    }
+}
+
+void Display_Valid_Problems(const std::string& chosen_entry)
+{
+    if (!Is_Valid_Entry(chosen_entry))
+    {
+        return;
+    }
+
+    const auto& problem_values = std::get<2>(list_valid_entries.at(chosen_entry));
+
+    for (const auto& problem : problem_values)
+    {
+        std::cout << '[' << problem.first << "] " << std::get<0>(problem.second) << '\n';
     }
 }
 
 std::string Get_Directory(const std::string& my_namespace)
 {
-    if (my_namespace == "QR_2013")
+    if (!Is_Valid_Entry(my_namespace))
     {
-        return QR_2013::directory_path;
-    }
-    else if (my_namespace == "QR_2014")
-    {
-        return QR_2014::directory_path;
+        std::cerr << "No namespace \"" << my_namespace << "\" found.\n";
+        return std::string();
     }
 
-    std::cerr << "No namespace \"" << my_namespace << "\" found.\n";
-    return std::string();
+    return std::get<1>(list_valid_entries.at(my_namespace));
 }
 
 void Function_To_Call(const std::string& my_namespace, const std::string& my_function, std::ifstream& file_input, std::ofstream& file_output)
 {
-    if (my_namespace == "QR_2013")
+    if (!Is_Valid_Problem(my_namespace, my_function, true))
     {
-        if (my_function == "T4")
-        {
-            QR_2013::Solve_T4(file_input, file_output);
-        }
-        else if (my_function == "Lm")
-        {
-            QR_2013::Solve_Lm(file_input, file_output);
-        }
-        else if (my_function == "FS")
-        {
-            QR_2013::Solve_FS(file_input, file_output);
-        }
-        else
-        {
-            std::cerr << "No function \"" << my_function << "\" to call.\n";
-        }
+        return;
     }
-    else if (my_namespace == "QR_2014")
-    {
-        if (my_function == "MT")
-        {
-            QR_2014::Solve_MT(file_input, file_output);
-        }
-        else if (my_function == "CA")
-        {
-            QR_2014::Solve_CA(file_input, file_output);
-        }
-        else if (my_function == "DW")
-        {
-            QR_2014::Solve_DW(file_input, file_output);
-        }
-    }
-    else
-    {
-        std::cerr << "No namespace \"" << my_namespace << "\" found.\n";
-    }
+
+    const auto& problem_values = std::get<2>(list_valid_entries.at(my_namespace));
+    const auto& function_to_call = std::get<1>(problem_values.at(my_function));
+
+    function_to_call(file_input, file_output);
 }
 
 int main()
@@ -181,9 +175,9 @@ int main()
 
         if (user_input == "help")
         {
-            Display_Valid_Entries(chosen_entry);
+            Display_Valid_Problems(chosen_entry);
         }
-        else if (Is_Valid_Entry(chosen_entry, user_input))
+        else if (Is_Valid_Problem(chosen_entry, user_input))
         {
             chosen_problem = user_input;
         }
