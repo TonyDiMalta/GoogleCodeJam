@@ -23,15 +23,15 @@ std::pair<int, int> Play_Deceitful_War(const unsigned int& nb_total_blocks)
             ++sum_war_points;
             ++sum_deceitful_war_points;
 
-            optimal_scores.second = std::max(optimal_scores.second, sum_deceitful_war_points);
+            optimal_scores.second = std::max(optimal_scores.second, sum_war_points);
         }
         else
         {
-            --sum_deceitful_war_points;
+            --sum_war_points;
 
-            if (sum_war_points > 0)
+            if (sum_deceitful_war_points > 0)
             {
-                --sum_war_points;
+                --sum_deceitful_war_points;
                 ++optimal_scores.first;
             }
         }
