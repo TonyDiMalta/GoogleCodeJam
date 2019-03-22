@@ -135,6 +135,12 @@ void Function_To_Call(const std::string& my_namespace, const std::string& my_fun
     const auto& problem_values = std::get<2>(list_valid_entries.at(my_namespace));
     const auto& function_to_call = std::get<1>(problem_values.at(my_function));
 
+    if (function_to_call == nullptr)
+    {
+        std::cerr << "No function \"" << my_function << "\" found.\n";
+        return;
+    }
+
     function_to_call(file_input, file_output);
 }
 
