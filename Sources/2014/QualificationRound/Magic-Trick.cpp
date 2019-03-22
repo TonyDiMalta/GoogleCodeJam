@@ -7,15 +7,15 @@
 void QR_2014::Solve_MT(std::ifstream& file_input, std::ofstream& file_output)
 {
     constexpr unsigned int CARDS_PER_ROW = 4;
-    unsigned int chosen_cards[CARDS_PER_ROW];
+    unsigned int chosen_cards[CARDS_PER_ROW] = { 0 };
 
-    unsigned int nb_tricks;
-    unsigned int volunteer_index;
-    unsigned int line_index;
-    unsigned int column_index;
-    unsigned int chosen_row;
-    unsigned int throw_value;
-    unsigned int nb_matching_cards;
+    unsigned int nb_tricks = 0;
+    unsigned int volunteer_index = 0;
+    unsigned int line_index = 0;
+    unsigned int column_index = 0;
+    unsigned int chosen_row = 0;
+    unsigned int throw_value = 0;
+    unsigned int nb_matching_cards = 0;
     std::string magician_reveal;
 
     file_input >> nb_tricks;

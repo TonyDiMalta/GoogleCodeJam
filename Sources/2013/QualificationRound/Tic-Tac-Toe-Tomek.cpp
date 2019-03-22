@@ -30,7 +30,7 @@ struct Symbols_Number
     unsigned int diagonal2 = 0;
 };
 
-void Increment_Matching_Number(const char& current_char, unsigned int& number_X, unsigned int& number_O)
+void Increment_Matching_Number(const char& current_char, unsigned int& number_X, unsigned int& number_O) noexcept
 {
     if (current_char == 'X')
     {
@@ -47,7 +47,7 @@ void Increment_Matching_Number(const char& current_char, unsigned int& number_X,
     }
 }
 
-T4_Output_Type Check_Game_State(std::string* game_board)
+T4_Output_Type Check_Game_State(std::string (&game_board)[BOARD_SIZE])
 {
     bool is_board_full = true;
     Symbols_Number player_X;
@@ -110,8 +110,9 @@ T4_Output_Type Check_Game_State(std::string* game_board)
 
 void QR_2013::Solve_T4(std::ifstream& file_input, std::ofstream& file_output)
 {
-    unsigned int nb_boards;
+    unsigned int nb_boards = 0;
     std::string game_board[BOARD_SIZE];
+    T4_Output_Type game_state = T4_Output_Type::NOT_OVER;
 
     file_input >> nb_boards;
     for (unsigned int board_index = 1; board_index <= nb_boards; ++board_index)
@@ -123,7 +124,7 @@ void QR_2013::Solve_T4(std::ifstream& file_input, std::ofstream& file_output)
 
         file_output << "Case #" << board_index << ": ";
 
-        T4_Output_Type game_state = Check_Game_State(game_board);
+        game_state = Check_Game_State(game_board);
 
         file_output << T4_Output.at(game_state) << '\n';
     }

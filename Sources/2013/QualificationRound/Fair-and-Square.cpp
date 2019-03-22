@@ -13,7 +13,7 @@ constexpr unsigned int MAX_ROOT = 25;
 
 std::vector<std::string> fair_and_square_numbers;
 
-bool Compare_Numbers(const std::string& number1, const std::string& number2)
+bool Compare_Numbers(const std::string& number1, const std::string& number2) noexcept
 {
     const auto number1_size = number1.size();
     const auto number2_size = number2.size();
@@ -31,7 +31,7 @@ bool Compare_Numbers(const std::string& number1, const std::string& number2)
     return number1 < number2;
 }
 
-unsigned int Count_Numbers_In_Range(const std::string range_min, const std::string range_max)
+unsigned int Count_Numbers_In_Range(const std::string& range_min, const std::string& range_max)
 {
     const auto min_iterator = std::lower_bound(fair_and_square_numbers.begin(), fair_and_square_numbers.end(), range_min, Compare_Numbers);
     if (min_iterator == fair_and_square_numbers.end())
@@ -46,12 +46,12 @@ unsigned int Count_Numbers_In_Range(const std::string range_min, const std::stri
 
 std::string Square_Number(const std::string& number)
 {
-    const unsigned int number_size = static_cast<unsigned int>(number.size());
+    const std::size_t number_size = number.size();
     std::string square(number_size * 2 - 1, '0');
-    unsigned int i;
-    unsigned int j;
-    char val1;
-    char val2;
+    std::size_t i = 0;
+    std::size_t j = 0;
+    char val1 = 0;
+    char val2 = 0;
 
     for (i = 0; i < number_size; ++i)
     {
@@ -75,8 +75,8 @@ void Generate_Fair_and_Square_Numbers()
     fair_and_square_numbers.push_back("4");
     fair_and_square_numbers.push_back("9");
 
-    unsigned int root_number;
-    unsigned int number_of_ones;
+    unsigned int root_number = 0;
+    unsigned int number_of_ones = 0;
     std::string half_palindrome;
     half_palindrome.reserve(MAX_ROOT);
     std::string reverse_half_palindrome;
@@ -132,10 +132,10 @@ void Generate_Fair_and_Square_Numbers()
 
 void QR_2013::Solve_FS(std::ifstream& file_input, std::ofstream& file_output)
 {
-    unsigned int nb_tests;
+    unsigned int nb_tests = 0;
+    unsigned int count_numbers = 0;
     std::string range_min;
     std::string range_max;
-    unsigned int count_numbers;
 
     if (fair_and_square_numbers.empty())
     {

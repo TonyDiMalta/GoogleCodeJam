@@ -9,7 +9,7 @@ std::pair<double, bool> woods_height[2 * nb_max_blocks_per_player];
 
 std::pair<int, int> Play_Deceitful_War(const unsigned int& nb_total_blocks)
 {
-    unsigned int block_index;
+    unsigned int block_index = 0;
     int sum_war_points = 0;
     int sum_deceitful_war_points = 0;
     std::pair<int, int> optimal_scores = { 0, 0 };
@@ -42,11 +42,11 @@ std::pair<int, int> Play_Deceitful_War(const unsigned int& nb_total_blocks)
 
 void QR_2014::Solve_DW(std::ifstream& file_input, std::ofstream& file_output)
 {
-    unsigned int nb_cases;
-    unsigned int index;
-    unsigned int nb_blocks_per_player;
-    unsigned int nb_total_blocks;
-    unsigned int block_index;
+    unsigned int nb_cases = 0;
+    unsigned int index = 0;
+    unsigned int nb_blocks_per_player = 0;
+    unsigned int nb_total_blocks = 0;
+    unsigned int block_index = 0;
     std::pair<int, int> optimal_scores;
 
     file_input >> nb_cases;

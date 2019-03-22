@@ -7,7 +7,7 @@ unsigned int Minimum_Number_Of_Friends(const unsigned int& max_shyness_level, co
 {
     unsigned int min_nb_friends = 0;
     unsigned int nb_people_standing = 0;
-    unsigned int shyness_level;
+    unsigned int shyness_level = 0;
 
     for (shyness_level = 0; shyness_level <= max_shyness_level; ++shyness_level)
     {
@@ -25,10 +25,10 @@ unsigned int Minimum_Number_Of_Friends(const unsigned int& max_shyness_level, co
 
 void QR_2015::Solve_SO(std::ifstream& file_input, std::ofstream& file_output)
 {
-    unsigned int nb_audiences;
-    unsigned int audience_index;
-    unsigned int max_shyness_level;
-    unsigned int min_nb_friends;
+    unsigned int nb_audiences = 0;
+    unsigned int audience_index = 0;
+    unsigned int max_shyness_level = 0;
+    unsigned int min_nb_friends = 0;
     std::string audience_shyness_level;
 
     file_input >> nb_audiences;

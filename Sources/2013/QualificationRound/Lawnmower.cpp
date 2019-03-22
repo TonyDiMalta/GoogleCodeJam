@@ -10,7 +10,7 @@ unsigned int lawn[MAX_SIZE][MAX_SIZE];
 unsigned int nb_lines_used;
 unsigned int nb_columns_used;
 
-unsigned int Get_Max_Column_Height(unsigned int col_index)
+unsigned int Get_Max_Column_Height(unsigned int col_index) noexcept
 {
     unsigned int max_height = lawn[0][col_index];
 
@@ -24,9 +24,9 @@ unsigned int Get_Max_Column_Height(unsigned int col_index)
 
 std::string Check_Lawn_Possible()
 {
-    unsigned int line_index;
-    unsigned int column_index;
-    unsigned int max_line_height;
+    unsigned int line_index = 0;
+    unsigned int column_index = 0;
+    unsigned int max_line_height = 0;
     std::vector<unsigned int> max_columns_height;
 
     for (column_index = 0; column_index < nb_columns_used; ++column_index)
@@ -52,10 +52,10 @@ std::string Check_Lawn_Possible()
 
 void QR_2013::Solve_Lm(std::ifstream& file_input, std::ofstream& file_output)
 {
-    unsigned int nb_lawns;
-    unsigned int lawn_index;
-    unsigned int line_index;
-    unsigned int column_index;
+    unsigned int nb_lawns = 0;
+    unsigned int lawn_index = 0;
+    unsigned int line_index = 0;
+    unsigned int column_index = 0;
 
     file_input >> nb_lawns;
     for (lawn_index = 1; lawn_index <= nb_lawns; ++lawn_index)
