@@ -6,7 +6,7 @@
 
 namespace QR_2014
 {
-    static std::string directory_path = "Sources/2014/QualificationRound/";
+    static const std::string directory_path = "Sources/2014/QualificationRound/";
     void Solve_MT(std::ifstream& file_input, std::ofstream& file_output);
     void Solve_CA(std::ifstream& file_input, std::ofstream& file_output);
     void Solve_DW(std::ifstream& file_input, std::ofstream& file_output);
