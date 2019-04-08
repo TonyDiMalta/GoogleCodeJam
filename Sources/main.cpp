@@ -213,37 +213,76 @@ int main()
         {
             user_input.erase(user_input.end() - 3, user_input.end());
         }
-        
+
         try
         {
             file_input.open(directory_path + user_input + ".in", std::ios::in);
-
-            try
+            file_output.open(directory_path + user_input + ".out", std::ios::trunc | std::ios::out);
+        }
+        catch (const std::fstream::failure& e)
+        {
+            if (file_input.fail())
             {
-                file_output.open(directory_path + user_input + ".out", std::ios::trunc | std::ios::out);
+                std::cerr << "Exception opening input file, please try again.\n";
             }
-            catch (const std::ofstream::failure& e)
+            if (file_output.fail())
             {
                 std::cerr << "Exception opening/creating output file, please try again.\n";
-#ifdef _DEBUG
-                std::cerr << "Exception caught : " << e.what() << '\n';
-#endif
             }
-        }
-        catch (const std::ifstream::failure& e)
-        {
-            std::cerr << "Exception opening/reading input file, please try again.\n";
 #ifdef _DEBUG
-            std::cerr << "Exception caught : " << e.what() << '\n';
+            std::cerr << "Exception caught : " << e.what() << '\n'
+                      << "Error code : " << e.code() << '\n';
 #endif
+            std::remove((directory_path + user_input + ".out").c_str());
         }
-
+        catch (...)
+        {
+            if (file_input.fail())
+            {
+                std::cerr << "Exception opening input file not handled, please try again.\n";
+            }
+            if (file_output.fail())
+            {
+                std::cerr << "Exception opening/creating output file not handled, please try again.\n";
+            }
+            std::remove((directory_path + user_input + ".out").c_str());
+        }
+        
     } while (!file_input || !file_output);
 
-    Function_To_Call(chosen_entry, chosen_problem, file_input, file_output);
+    try
+    {
+        Function_To_Call(chosen_entry, chosen_problem, file_input, file_output);
 
-    file_input.close();
-    file_output.close();
+        file_input.close();
+        file_output.close();
+    }
+    catch (const std::fstream::failure& e)
+    {
+        if (file_input.fail())
+        {
+            std::cerr << "Exception reading/closing input file.\n";
+        }
+        if (file_output.fail())
+        {
+            std::cerr << "Exception writing/closing output file.\n";
+        }
+#ifdef _DEBUG
+        std::cerr << "Exception caught : " << e.what() << '\n'
+                  << "Error code : " << e.code() << '\n';
+#endif
+    }
+    catch (...)
+    {
+        if (file_input.fail())
+        {
+            std::cerr << "Exception reading/closing input file not handled.\n";
+        }
+        if (file_output.fail())
+        {
+            std::cerr << "Exception writing/closing output file not handled.\n";
+        }
+    }
 
     return 0;
 }
