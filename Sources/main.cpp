@@ -7,6 +7,7 @@
 #include "2013/QualificationRound/Qualification-Round-2013.hpp"
 #include "2014/QualificationRound/Qualification-Round-2014.hpp"
 #include "2015/QualificationRound/Qualification-Round-2015.hpp"
+#include "2019/QualificationRound/Qualification-Round-2019.hpp"
 
 typedef void(*function_pointer)(std::istream&, std::ostream&);
 
@@ -47,6 +48,15 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
             {
                 { "SO",
                     { "Standing Ovation", QR_2015::Solve_SO }
+                }
+            }
+        }
+    },
+    { "QR_2019",
+        { "Qualification Round 2019", QR_2019::directory_path,
+            {
+                { "FS",
+                    { "Foregone Solution", QR_2019::Solve_FS }
                 }
             }
         }

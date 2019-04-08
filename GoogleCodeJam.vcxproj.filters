@@ -39,6 +39,9 @@
     <ClCompile Include="Sources\2015\QualificationRound\Standing-Ovation.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\2019\QualificationRound\Forgone-Solution.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\2013\QualificationRound\Qualification-Round-2013.hpp">
@@ -48,6 +51,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Sources\2015\QualificationRound\Qualification-Round-2015.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\2019\QualificationRound\Qualification-Round-2019.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
