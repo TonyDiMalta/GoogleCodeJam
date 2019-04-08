@@ -139,7 +139,8 @@
     <ClCompile Include="Sources\2014\QualificationRound\Deceitful-War.cpp" />
     <ClCompile Include="Sources\2014\QualificationRound\Magic-Trick.cpp" />
     <ClCompile Include="Sources\2015\QualificationRound\Standing-Ovation.cpp" />
-    <ClCompile Include="Sources\2019\QualificationRound\Forgone-Solution.cpp" />
+    <ClCompile Include="Sources\2019\QualificationRound\Foregone-Solution.cpp" />
+    <ClCompile Include="Sources\2019\QualificationRound\You-Can-Go-Your-Own-Way.cpp" />
     <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

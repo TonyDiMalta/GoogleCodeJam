@@ -57,6 +57,9 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
             {
                 { "FS",
                     { "Foregone Solution", QR_2019::Solve_FS }
+                },
+                { "OW",
+                    { "You Can Go Your Own Way", QR_2019::Solve_OW }
                 }
             }
         }
