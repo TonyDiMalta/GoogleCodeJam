@@ -8,7 +8,7 @@
 #include "2014/QualificationRound/Qualification-Round-2014.hpp"
 #include "2015/QualificationRound/Qualification-Round-2015.hpp"
 
-typedef void(*function_pointer)(std::ifstream&, std::ofstream&);
+typedef void(*function_pointer)(std::istream&, std::ostream&);
 
 const std::map<std::string, std::tuple<std::string, std::string, std::map<std::string, std::pair<std::string, function_pointer>>>> list_valid_entries
 {
@@ -125,7 +125,7 @@ std::string Get_Directory(const std::string& my_namespace)
     return std::get<1>(list_valid_entries.at(my_namespace));
 }
 
-void Function_To_Call(const std::string& my_namespace, const std::string& my_function, std::ifstream& file_input, std::ofstream& file_output)
+void Function_To_Call(const std::string& my_namespace, const std::string& my_function, std::istream& file_input, std::ostream& file_output)
 {
     if (!Is_Valid_Problem(my_namespace, my_function, true))
     {

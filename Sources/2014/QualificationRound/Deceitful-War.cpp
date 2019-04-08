@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <fstream>
+#include <iostream>
 
 #include "Qualification-Round-2014.hpp"
 
@@ -40,7 +40,7 @@ std::pair<int, int> Play_Deceitful_War(const unsigned int& nb_total_blocks)
     return optimal_scores;
 }
 
-void QR_2014::Solve_DW(std::ifstream& file_input, std::ofstream& file_output)
+void QR_2014::Solve_DW(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_cases = 0;
     unsigned int index = 0;

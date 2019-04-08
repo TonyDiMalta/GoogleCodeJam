@@ -1,4 +1,4 @@
-#include <fstream>
+#include <iostream>
 #include <string>
 
 #include "Qualification-Round-2015.hpp"
@@ -23,7 +23,7 @@ unsigned int Minimum_Number_Of_Friends(const unsigned int& max_shyness_level, co
     return min_nb_friends;
 }
 
-void QR_2015::Solve_SO(std::ifstream& file_input, std::ofstream& file_output)
+void QR_2015::Solve_SO(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_audiences = 0;
     unsigned int audience_index = 0;

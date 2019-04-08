@@ -1,5 +1,5 @@
-#include <fstream>
 #include <iomanip>
+#include <iostream>
 
 #include "Qualification-Round-2014.hpp"
 
@@ -31,7 +31,7 @@ double Minimum_Time_To_Generate_Cookies(double farm_cost, double farm_cookies_pe
     return time_spent_building + time_to_make_cookies;
 }
 
-void QR_2014::Solve_CA(std::ifstream& file_input, std::ofstream& file_output)
+void QR_2014::Solve_CA(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_cases = 0;
     unsigned int index = 0;

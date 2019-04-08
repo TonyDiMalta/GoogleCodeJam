@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <fstream>
 #include <iostream>
 #include <iterator>
 #include <string>
@@ -130,7 +129,7 @@ void Generate_Fair_and_Square_Numbers()
     std::cout << "\nFair and square numbers generated.\n";
 }
 
-void QR_2013::Solve_FS(std::ifstream& file_input, std::ofstream& file_output)
+void QR_2013::Solve_FS(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_tests = 0;
     unsigned int count_numbers = 0;
