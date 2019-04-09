@@ -45,6 +45,9 @@
     <ClCompile Include="Sources\2019\QualificationRound\You-Can-Go-Your-Own-Way.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\2019\QualificationRound\Cryptopangrams.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\2013\QualificationRound\Qualification-Round-2013.hpp">

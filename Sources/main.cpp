@@ -60,6 +60,9 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
                 },
                 { "OW",
                     { "You Can Go Your Own Way", QR_2019::Solve_OW }
+                },
+                { "CP",
+                    { "Cryptopangrams", QR_2019::Solve_CP }
                 }
             }
         }
