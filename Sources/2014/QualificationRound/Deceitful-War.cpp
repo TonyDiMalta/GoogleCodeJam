@@ -14,7 +14,7 @@ std::pair<int, int> Play_Deceitful_War(const unsigned int& nb_total_blocks)
     int sum_deceitful_war_points = 0;
     std::pair<int, int> optimal_scores = { 0, 0 };
 
-    std::sort(woods_height, woods_height + nb_total_blocks, std::greater());
+    std::sort(woods_height, woods_height + nb_total_blocks, std::greater<std::pair<double, bool>>());
 
     for (block_index = 0; block_index < nb_total_blocks; ++block_index)
     {
