@@ -25,7 +25,7 @@ std::pair<std::string, std::string> Split_Integer(std::string integer_to_split)
     return { first_integer, second_integer };
 }
 
-void QR_2019::Solve_FS(std::istream& input, std::ostream& output)
+void QR_2019::Solve_Foregone_Solution(std::istream& input, std::ostream& output)
 {
     std::pair<std::string, std::string> pair_solution;
     std::string integer_to_split;

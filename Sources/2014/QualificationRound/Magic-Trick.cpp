@@ -4,7 +4,7 @@
 
 #include "Qualification-Round-2014.hpp"
 
-void QR_2014::Solve_MT(std::istream& file_input, std::ostream& file_output)
+void QR_2014::Solve_Magic_Trick(std::istream& file_input, std::ostream& file_output)
 {
     constexpr unsigned int CARDS_PER_ROW = 4;
     unsigned int chosen_cards[CARDS_PER_ROW] = { 0 };

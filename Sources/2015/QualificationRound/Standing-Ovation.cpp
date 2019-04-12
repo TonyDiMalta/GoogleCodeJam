@@ -23,7 +23,7 @@ unsigned int Minimum_Number_Of_Friends(const unsigned int& max_shyness_level, co
     return min_nb_friends;
 }
 
-void QR_2015::Solve_SO(std::istream& file_input, std::ostream& file_output)
+void QR_2015::Solve_Standing_Ovation(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_audiences = 0;
     unsigned int audience_index = 0;

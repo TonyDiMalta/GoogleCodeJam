@@ -17,13 +17,13 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
         { "Qualification Round 2013", QR_2013::directory_path,
             {
                 { "T4",
-                    { "Tic-Tac-Toe-Tomek", QR_2013::Solve_T4 }
+                    { "Tic-Tac-Toe-Tomek", QR_2013::Solve_Tic_Tac_Toe_Tomek }
                 },
                 { "Lm",
-                    { "Lawnmower", QR_2013::Solve_Lm }
+                    { "Lawnmower", QR_2013::Solve_Lawnmower }
                 },
                 { "FS",
-                    { "Fair and Square", QR_2013::Solve_FS }
+                    { "Fair and Square", QR_2013::Solve_Fair_and_Square }
                 }
             }
         }
@@ -32,13 +32,13 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
         { "Qualification Round 2014", QR_2014::directory_path,
             {
                 { "MT",
-                    { "Magic Trick", QR_2014::Solve_MT }
+                    { "Magic Trick", QR_2014::Solve_Magic_Trick }
                 },
                 { "CA",
-                    { "Cookie Clicker Alpha", QR_2014::Solve_CA }
+                    { "Cookie Clicker Alpha", QR_2014::Solve_Cookie_Clicker_Alpha }
                 },
                 { "DW",
-                    { "Deceitful War", QR_2014::Solve_DW }
+                    { "Deceitful War", QR_2014::Solve_Deceitful_War }
                 }
             }
         }
@@ -47,7 +47,7 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
         { "Qualification Round 2015", QR_2015::directory_path,
             {
                 { "SO",
-                    { "Standing Ovation", QR_2015::Solve_SO }
+                    { "Standing Ovation", QR_2015::Solve_Standing_Ovation }
                 }
             }
         }
@@ -56,13 +56,13 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
         { "Qualification Round 2019", QR_2019::directory_path,
             {
                 { "FS",
-                    { "Foregone Solution", QR_2019::Solve_FS }
+                    { "Foregone Solution", QR_2019::Solve_Foregone_Solution }
                 },
                 { "OW",
-                    { "You Can Go Your Own Way", QR_2019::Solve_OW }
+                    { "You Can Go Your Own Way", QR_2019::Solve_You_Can_Go_Your_Own_Way }
                 },
                 { "CP",
-                    { "Cryptopangrams", QR_2019::Solve_CP }
+                    { "Cryptopangrams", QR_2019::Solve_Cryptopangrams }
                 }
             }
         }

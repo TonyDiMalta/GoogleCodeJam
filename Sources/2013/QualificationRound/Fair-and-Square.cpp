@@ -129,7 +129,7 @@ void Generate_Fair_and_Square_Numbers()
     std::cout << "\nFair and square numbers generated.\n";
 }
 
-void QR_2013::Solve_FS(std::istream& file_input, std::ostream& file_output)
+void QR_2013::Solve_Fair_and_Square(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_tests = 0;
     unsigned int count_numbers = 0;

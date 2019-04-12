@@ -108,7 +108,7 @@ T4_Output_Type Check_Game_State(std::string (&game_board)[BOARD_SIZE])
     return T4_Output_Type::NOT_OVER;
 }
 
-void QR_2013::Solve_T4(std::istream& file_input, std::ostream& file_output)
+void QR_2013::Solve_Tic_Tac_Toe_Tomek(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_boards = 0;
     std::string game_board[BOARD_SIZE];

@@ -22,7 +22,7 @@ std::string Solve_Maze(std::string& forbidden_path)
     return valid_path;
 }
 
-void QR_2019::Solve_OW(std::istream& input, std::ostream& output)
+void QR_2019::Solve_You_Can_Go_Your_Own_Way(std::istream& input, std::ostream& output)
 {
     std::string forbidden_path;
     std::string valid_path;

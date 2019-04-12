@@ -50,7 +50,7 @@ std::string Check_Lawn_Possible()
     return "YES";
 }
 
-void QR_2013::Solve_Lm(std::istream& file_input, std::ostream& file_output)
+void QR_2013::Solve_Lawnmower(std::istream& file_input, std::ostream& file_output)
 {
     unsigned int nb_lawns = 0;
     unsigned int lawn_index = 0;

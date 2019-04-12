@@ -95,7 +95,7 @@ void Deciphering_Text(unsigned long long (&cipher_text)[MAX_TEXT_LETTERS], const
     }
 }
 
-void QR_2019::Solve_CP(std::istream& input, std::ostream& output)
+void QR_2019::Solve_Cryptopangrams(std::istream& input, std::ostream& output)
 {
     unsigned long long ciphertext_semiprimes[MAX_TEXT_LETTERS] = { 0 };
     std::string plain_text(MAX_TEXT_LETTERS, 0);
