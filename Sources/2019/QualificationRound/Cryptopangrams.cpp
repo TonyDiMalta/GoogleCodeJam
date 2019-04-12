@@ -95,7 +95,7 @@ void Deciphering_Text(unsigned long long (&cipher_text)[MAX_TEXT_LETTERS], const
     }
 }
 
-void QR_2019::Solve_Cryptopangrams(std::istream& input, std::ostream& output)
+void QR_2019::Solve_Cryptopangrams(std::istream& input_stream, std::ostream& output_stream)
 {
     unsigned long long ciphertext_semiprimes[MAX_TEXT_LETTERS] = { 0 };
     std::string plain_text(MAX_TEXT_LETTERS, 0);
@@ -105,23 +105,23 @@ void QR_2019::Solve_Cryptopangrams(std::istream& input, std::ostream& output)
     unsigned int index_test_case = 0;
     unsigned int nb_test_cases = 0;
 
-    input >> nb_test_cases;
+    input_stream >> nb_test_cases;
     for (index_test_case = 1; index_test_case <= nb_test_cases; ++index_test_case)
     {
-        output << "Case #" << index_test_case << ": ";
+        output_stream << "Case #" << index_test_case << ": ";
 
-        input >> max_prime_number >> nb_cipher_values;
+        input_stream >> max_prime_number >> nb_cipher_values;
 
         // At this point, it is important to note that each semiprime number is the product of 2 prime numbers.
         // As a result, we keep the first slot in the array for one of these two numbers.
         for (index_cipher_value = 1; index_cipher_value <= nb_cipher_values; ++index_cipher_value)
         {
-            input >> ciphertext_semiprimes[index_cipher_value];
+            input_stream >> ciphertext_semiprimes[index_cipher_value];
         }
 
         Deciphering_Text(ciphertext_semiprimes, nb_cipher_values, plain_text);
 
         // It should also be noted that there is nb_cipher_values + 1 prime numbers.
-        output << plain_text.substr(0, nb_cipher_values + 1).c_str() << '\n';
+        output_stream << plain_text.substr(0, nb_cipher_values + 1).c_str() << '\n';
     }
 }

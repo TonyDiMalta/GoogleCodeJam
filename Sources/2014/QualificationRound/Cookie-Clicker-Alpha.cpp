@@ -31,7 +31,7 @@ double Minimum_Time_To_Generate_Cookies(double farm_cost, double farm_cookies_pe
     return time_spent_building + time_to_make_cookies;
 }
 
-void QR_2014::Solve_Cookie_Clicker_Alpha(std::istream& file_input, std::ostream& file_output)
+void QR_2014::Solve_Cookie_Clicker_Alpha(std::istream& input_stream, std::ostream& output_stream)
 {
     unsigned int nb_cases = 0;
     unsigned int index = 0;
@@ -40,15 +40,15 @@ void QR_2014::Solve_Cookie_Clicker_Alpha(std::istream& file_input, std::ostream&
     double cookies_required = 0;
     double time_to_make_cookies = 0;
 
-    file_input >> nb_cases;
+    input_stream >> nb_cases;
     for (index = 1; index <= nb_cases; ++index)
     {
-        file_output << "Case #" << index << ": ";
+        output_stream << "Case #" << index << ": ";
 
-        file_input >> farm_cost >> farm_cookies_per_second >> cookies_required;
+        input_stream >> farm_cost >> farm_cookies_per_second >> cookies_required;
 
         time_to_make_cookies = Minimum_Time_To_Generate_Cookies(farm_cost, farm_cookies_per_second, cookies_required);
         
-        file_output << std::fixed << std::setprecision(decimal_precision) << time_to_make_cookies << '\n';
+        output_stream << std::fixed << std::setprecision(decimal_precision) << time_to_make_cookies << '\n';
     }
 }

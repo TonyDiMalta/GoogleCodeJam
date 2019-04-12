@@ -4,7 +4,7 @@
 
 #include "Qualification-Round-2014.hpp"
 
-void QR_2014::Solve_Magic_Trick(std::istream& file_input, std::ostream& file_output)
+void QR_2014::Solve_Magic_Trick(std::istream& input_stream, std::ostream& output_stream)
 {
     constexpr unsigned int CARDS_PER_ROW = 4;
     unsigned int chosen_cards[CARDS_PER_ROW] = { 0 };
@@ -18,12 +18,12 @@ void QR_2014::Solve_Magic_Trick(std::istream& file_input, std::ostream& file_out
     unsigned int nb_matching_cards = 0;
     std::string magician_reveal;
 
-    file_input >> nb_tricks;
+    input_stream >> nb_tricks;
     for (volunteer_index = 1; volunteer_index <= nb_tricks; ++volunteer_index)
     {
-        file_output << "Case #" << volunteer_index << ": ";
+        output_stream << "Case #" << volunteer_index << ": ";
 
-        file_input >> chosen_row;
+        input_stream >> chosen_row;
 
         for (line_index = 0; line_index < CARDS_PER_ROW; ++line_index)
         {
@@ -31,19 +31,19 @@ void QR_2014::Solve_Magic_Trick(std::istream& file_input, std::ostream& file_out
             {
                 for (column_index = 0; column_index < CARDS_PER_ROW; ++column_index)
                 {
-                    file_input >> chosen_cards[column_index];
+                    input_stream >> chosen_cards[column_index];
                 }
             }
             else
             {
                 for (column_index = 0; column_index < CARDS_PER_ROW; ++column_index)
                 {
-                    file_input >> throw_value;
+                    input_stream >> throw_value;
                 }
             }
         }
 
-        file_input >> chosen_row;
+        input_stream >> chosen_row;
 
         for (line_index = 0, nb_matching_cards = 0; line_index < CARDS_PER_ROW; ++line_index)
         {
@@ -51,7 +51,7 @@ void QR_2014::Solve_Magic_Trick(std::istream& file_input, std::ostream& file_out
             {
                 for (column_index = 0; column_index < CARDS_PER_ROW; ++column_index)
                 {
-                    file_input >> throw_value;
+                    input_stream >> throw_value;
 
                     nb_matching_cards += static_cast<unsigned int>(std::count(chosen_cards, chosen_cards + CARDS_PER_ROW, throw_value));
 
@@ -66,7 +66,7 @@ void QR_2014::Solve_Magic_Trick(std::istream& file_input, std::ostream& file_out
             {
                 for (column_index = 0; column_index < CARDS_PER_ROW; ++column_index)
                 {
-                    file_input >> throw_value;
+                    input_stream >> throw_value;
                 }
             }
         }
@@ -80,7 +80,7 @@ void QR_2014::Solve_Magic_Trick(std::istream& file_input, std::ostream& file_out
             magician_reveal = "Bad magician!";
         }
 
-        file_output << magician_reveal << '\n';
+        output_stream << magician_reveal << '\n';
 
         magician_reveal.clear();
     }

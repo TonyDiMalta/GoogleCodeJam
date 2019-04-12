@@ -108,24 +108,24 @@ T4_Output_Type Check_Game_State(std::string (&game_board)[BOARD_SIZE])
     return T4_Output_Type::NOT_OVER;
 }
 
-void QR_2013::Solve_Tic_Tac_Toe_Tomek(std::istream& file_input, std::ostream& file_output)
+void QR_2013::Solve_Tic_Tac_Toe_Tomek(std::istream& input_stream, std::ostream& output_stream)
 {
     unsigned int nb_boards = 0;
     std::string game_board[BOARD_SIZE];
     T4_Output_Type game_state = T4_Output_Type::NOT_OVER;
 
-    file_input >> nb_boards;
+    input_stream >> nb_boards;
     for (unsigned int board_index = 1; board_index <= nb_boards; ++board_index)
     {
         for (auto& line : game_board)
         {
-            file_input >> line;
+            input_stream >> line;
         }
 
-        file_output << "Case #" << board_index << ": ";
+        output_stream << "Case #" << board_index << ": ";
 
         game_state = Check_Game_State(game_board);
 
-        file_output << T4_Output.at(game_state) << '\n';
+        output_stream << T4_Output.at(game_state) << '\n';
     }
 }

@@ -22,7 +22,7 @@ std::string Solve_Maze(std::string& forbidden_path)
     return valid_path;
 }
 
-void QR_2019::Solve_You_Can_Go_Your_Own_Way(std::istream& input, std::ostream& output)
+void QR_2019::Solve_You_Can_Go_Your_Own_Way(std::istream& input_stream, std::ostream& output_stream)
 {
     std::string forbidden_path;
     std::string valid_path;
@@ -30,19 +30,19 @@ void QR_2019::Solve_You_Can_Go_Your_Own_Way(std::istream& input, std::ostream& o
     unsigned int index_test_case = 0;
     unsigned int nb_test_cases = 0;
 
-    input >> nb_test_cases;
+    input_stream >> nb_test_cases;
     for (index_test_case = 1; index_test_case <= nb_test_cases; ++index_test_case)
     {
-        output << "Case #" << index_test_case << ": ";
+        output_stream << "Case #" << index_test_case << ": ";
 
-        input >> maze_dimensions;
+        input_stream >> maze_dimensions;
 
-        input.ignore();
-        input.sync();
-        std::getline(input, forbidden_path);
+        input_stream.ignore();
+        input_stream.sync();
+        std::getline(input_stream, forbidden_path);
 
         valid_path = Solve_Maze(forbidden_path);
 
-        output << valid_path << '\n';
+        output_stream << valid_path << '\n';
     }
 }

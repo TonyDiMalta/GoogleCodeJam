@@ -23,7 +23,7 @@ unsigned int Minimum_Number_Of_Friends(const unsigned int& max_shyness_level, co
     return min_nb_friends;
 }
 
-void QR_2015::Solve_Standing_Ovation(std::istream& file_input, std::ostream& file_output)
+void QR_2015::Solve_Standing_Ovation(std::istream& input_stream, std::ostream& output_stream)
 {
     unsigned int nb_audiences = 0;
     unsigned int audience_index = 0;
@@ -31,15 +31,15 @@ void QR_2015::Solve_Standing_Ovation(std::istream& file_input, std::ostream& fil
     unsigned int min_nb_friends = 0;
     std::string audience_shyness_level;
 
-    file_input >> nb_audiences;
+    input_stream >> nb_audiences;
     for (audience_index = 1; audience_index <= nb_audiences; ++audience_index)
     {
-        file_output << "Case #" << audience_index << ": ";
+        output_stream << "Case #" << audience_index << ": ";
 
-        file_input >> max_shyness_level >> audience_shyness_level;
+        input_stream >> max_shyness_level >> audience_shyness_level;
 
         min_nb_friends = Minimum_Number_Of_Friends(max_shyness_level, audience_shyness_level);
 
-        file_output << min_nb_friends << '\n';
+        output_stream << min_nb_friends << '\n';
     }
 }

@@ -25,22 +25,22 @@ std::pair<std::string, std::string> Split_Integer(std::string integer_to_split)
     return { first_integer, second_integer };
 }
 
-void QR_2019::Solve_Foregone_Solution(std::istream& input, std::ostream& output)
+void QR_2019::Solve_Foregone_Solution(std::istream& input_stream, std::ostream& output_stream)
 {
     std::pair<std::string, std::string> pair_solution;
     std::string integer_to_split;
     unsigned int index_test_case = 0;
     unsigned int nb_test_cases = 0;
 
-    input >> nb_test_cases;
+    input_stream >> nb_test_cases;
     for (index_test_case = 1; index_test_case <= nb_test_cases; ++index_test_case)
     {
-        output << "Case #" << index_test_case << ": ";
+        output_stream << "Case #" << index_test_case << ": ";
 
-        input >> integer_to_split;
+        input_stream >> integer_to_split;
 
         pair_solution = Split_Integer(integer_to_split);
 
-        output << pair_solution.first << ' ' << pair_solution.second << '\n';
+        output_stream << pair_solution.first << ' ' << pair_solution.second << '\n';
     }
 }

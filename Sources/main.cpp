@@ -141,7 +141,7 @@ std::string Get_Directory(const std::string& my_namespace)
     return std::get<1>(list_valid_entries.at(my_namespace));
 }
 
-void Function_To_Call(const std::string& my_namespace, const std::string& my_function, std::istream& file_input, std::ostream& file_output)
+void Function_To_Call(const std::string& my_namespace, const std::string& my_function, std::istream& input_stream, std::ostream& output_stream)
 {
     if (!Is_Valid_Problem(my_namespace, my_function, true))
     {
@@ -157,7 +157,7 @@ void Function_To_Call(const std::string& my_namespace, const std::string& my_fun
         return;
     }
 
-    function_to_call(file_input, file_output);
+    function_to_call(input_stream, output_stream);
 }
 
 int main()

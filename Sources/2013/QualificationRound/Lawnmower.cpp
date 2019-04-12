@@ -50,27 +50,27 @@ std::string Check_Lawn_Possible()
     return "YES";
 }
 
-void QR_2013::Solve_Lawnmower(std::istream& file_input, std::ostream& file_output)
+void QR_2013::Solve_Lawnmower(std::istream& input_stream, std::ostream& output_stream)
 {
     unsigned int nb_lawns = 0;
     unsigned int lawn_index = 0;
     unsigned int line_index = 0;
     unsigned int column_index = 0;
 
-    file_input >> nb_lawns;
+    input_stream >> nb_lawns;
     for (lawn_index = 1; lawn_index <= nb_lawns; ++lawn_index)
     {
-        file_output << "Case #" << lawn_index << ": ";
+        output_stream << "Case #" << lawn_index << ": ";
 
-        file_input >> nb_lines_used >> nb_columns_used;
+        input_stream >> nb_lines_used >> nb_columns_used;
         for (line_index = 0; line_index < nb_lines_used; ++line_index)
         {
             for (column_index = 0; column_index < nb_columns_used; ++column_index)
             {
-                file_input >> lawn[line_index][column_index];
+                input_stream >> lawn[line_index][column_index];
             }
         }
 
-        file_output << Check_Lawn_Possible() << '\n';
+        output_stream << Check_Lawn_Possible() << '\n';
     }
 }

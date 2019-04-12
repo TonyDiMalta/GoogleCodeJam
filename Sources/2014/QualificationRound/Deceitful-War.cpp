@@ -40,7 +40,7 @@ std::pair<int, int> Play_Deceitful_War(const unsigned int& nb_total_blocks)
     return optimal_scores;
 }
 
-void QR_2014::Solve_Deceitful_War(std::istream& file_input, std::ostream& file_output)
+void QR_2014::Solve_Deceitful_War(std::istream& input_stream, std::ostream& output_stream)
 {
     unsigned int nb_cases = 0;
     unsigned int index = 0;
@@ -49,28 +49,28 @@ void QR_2014::Solve_Deceitful_War(std::istream& file_input, std::ostream& file_o
     unsigned int block_index = 0;
     std::pair<int, int> optimal_scores;
 
-    file_input >> nb_cases;
+    input_stream >> nb_cases;
     for (index = 1; index <= nb_cases; ++index)
     {
-        file_output << "Case #" << index << ": ";
+        output_stream << "Case #" << index << ": ";
 
-        file_input >> nb_blocks_per_player;
+        input_stream >> nb_blocks_per_player;
 
         for (block_index = 0; block_index < nb_blocks_per_player; ++block_index)
         {
-            file_input >> woods_height[block_index].first;
+            input_stream >> woods_height[block_index].first;
             woods_height[block_index].second = true;
         }
 
         nb_total_blocks = 2 * nb_blocks_per_player;
         for (block_index = nb_blocks_per_player; block_index < nb_total_blocks; ++block_index)
         {
-            file_input >> woods_height[block_index].first;
+            input_stream >> woods_height[block_index].first;
             woods_height[block_index].second = false;
         }
 
         optimal_scores = Play_Deceitful_War(nb_total_blocks);
 
-        file_output << optimal_scores.first << ' ' << optimal_scores.second << '\n';
+        output_stream << optimal_scores.first << ' ' << optimal_scores.second << '\n';
     }
 }
