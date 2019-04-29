@@ -130,6 +130,7 @@
     <ClInclude Include="Sources\2014\QualificationRound\Qualification-Round-2014.hpp" />
     <ClInclude Include="Sources\2015\QualificationRound\Qualification-Round-2015.hpp" />
     <ClInclude Include="Sources\2019\QualificationRound\Qualification-Round-2019.hpp" />
+    <ClInclude Include="Sources\2019\Round1B\Round-1B-2019.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\2013\QualificationRound\Fair-and-Square.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Sources\2019\QualificationRound\Cryptopangrams.cpp" />
     <ClCompile Include="Sources\2019\QualificationRound\Foregone-Solution.cpp" />
     <ClCompile Include="Sources\2019\QualificationRound\You-Can-Go-Your-Own-Way.cpp" />
+    <ClCompile Include="Sources\2019\Round1B\Manhattan-Crepe-Cart.cpp" />
     <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -8,6 +8,7 @@
 #include "2014/QualificationRound/Qualification-Round-2014.hpp"
 #include "2015/QualificationRound/Qualification-Round-2015.hpp"
 #include "2019/QualificationRound/Qualification-Round-2019.hpp"
+#include "2019/Round1B/Round-1B-2019.hpp"
 
 typedef void(*function_pointer)(std::istream&, std::ostream&);
 
@@ -63,6 +64,15 @@ const std::map<std::string, std::tuple<std::string, std::string, std::map<std::s
                 },
                 { "CP",
                     { "Cryptopangrams", QR_2019::Solve_Cryptopangrams }
+                }
+            }
+        }
+    },
+    { "R1B_2019",
+        { "Round 1B 2019", R1B_2019::directory_path,
+            {
+                { "MC",
+                    { "Manhattan Crepe Cart", R1B_2019::Solve_Manhattan_Crepe_Cart }
                 }
             }
         }
